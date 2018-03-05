@@ -1,0 +1,41 @@
+.main {
+    border: 1px solid black;
+    display: grid;
+    grid-template: minmax(300px, 400px) 1fr / repeat(12, 1fr) ;
+    min-height: 800px;
+}
+
+.objective {
+    grid-column: 1 /  span 12;
+    border: 1px solid green;
+}
+
+.summary {
+    grid-column: 1 / span 12;
+    border: 1px solid salmon;
+}
+
+.card {
+    grid-column: 1 / span 12;
+    grid-row: 1 / span 2;
+    border: 1px solid red;
+    border-radius: 0px;
+   
+}
+/*  grid-area: 1 / 1 / 2 / 13; */
+
+/* Mobile first queries */
+
+/* Extra small devices (portrait phones, less than 576px) */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { }

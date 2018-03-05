@@ -1,0 +1,33 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    border-radius: 0px;
+}
+
+/*
+ Color themes:
+*/
+
+.background-screen {
+    background-color: #c5c1c0;
+}
+
+.background-steel {
+    background-color: #0a1612;
+}
+
+.background-demin {
+    background-color: #1a2930;
+}
+
+.background-merigold {
+    background-color: #f7ce3e;
+}
+
+.background-sand {
+    background-color: #F4decb;
+}
+
+.background-blackboard {
+    background-color: #565656;
+}
