@@ -119,6 +119,7 @@ const arr4 =['snail', 'mail'];
     )
 }
 /*
+
 Summary.propTypes = {
 
     imageLink: PropTypes.string,
@@ -126,6 +127,7 @@ Summary.propTypes = {
     objective: PropTypes.string
 
 };
+
 */
 
 export default Summary
