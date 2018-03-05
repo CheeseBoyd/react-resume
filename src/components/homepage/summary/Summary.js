@@ -37,6 +37,7 @@ const Styledlist = styled.ul`
 
 
 const StyledlistItem = styled.li`
+    align-self: stretch;
     line-height: 150%;
     border: 1px solid grey;
     list-style: none;
@@ -44,6 +45,8 @@ const StyledlistItem = styled.li`
 `;
 
 const Styledtitle = styled.div`
+    padding-top: 1.5rem;
+    padding-bottom: 1.5em;
     grid-column: 2 / span 3;
     text-align: center;
     justify-content: center;
@@ -75,9 +78,13 @@ const mapper = (array)=>(
     array.map(items => (<Items item={items} key={array.indexOf(items)}/>))
 )
 
+const listItem = {
+    
+}
+
     return(
             <Styledlist>
-                <div>{'List Name'}</div>
+                <div>{props.listName}</div>
                 {mapper(props.item)}              
             </Styledlist>       
     )
@@ -90,28 +97,30 @@ const Summary = (props) =>{
  const mapper = (array)=>(
     array.map(element =>{
         return(
-            <Lists item={element} key={array.indexOf(element)} />
+            <Lists listName={element[0]} item={element[1]} key={array.indexOf(element)} />
         )
         
     })
 )
 
-const arr1 = [1, 2, 3, 4, 5, 6, 7, 8];
+const obj = {
+    "list of numbers": [1,2,3,5],
+    "List of words": ["hello", "goodbye"],
+}
 
-const arr2 = ['a', 'b', 'c', 'd'];
 
-const arr3 = ['mixed', 12, 'twice', 'some long sentence', 'another sentence perhaps', 'long long can i lorem ipsum dolor mofa si tasana r moask hadf'];
+const entries = Object.entries(obj);
+console.log(entries);
 
-const arr4 =['snail', 'mail'];
 
     return(
         <Styledmain className="background-blackboard">
             <Styledtitle>
-                <h3>Some Title</h3>
+                <h3>Summary</h3>
             </Styledtitle>
             <StyledlistContainer>
                 {
-                    mapper([arr1, arr2, arr3, arr4])
+                    mapper(entries)
                 }
             </StyledlistContainer>
 
