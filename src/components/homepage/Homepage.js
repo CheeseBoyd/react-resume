@@ -1,8 +1,10 @@
 import React from 'react';
 import HeaderCard from './headerCard/HeaderCard';
 import Summary from './summary/Summary';
-import './Homepage.css';
+import Footer from './footer/Footer';
 import styled from 'styled-components';
+import Resume from '../resume/Resume';
+import { Link } from "react-router-dom";
 
 
 const StyledMain = styled.div`
@@ -13,16 +15,6 @@ const StyledMain = styled.div`
     min-height: 800px;
 `;
 
-// grid-template: minmax(300px, 400px) 1fr / repeat(12, 1fr);
-
-/*
-const Styledobjective = styled.div`
-    grid-column: 1 /  span 12;
-    border: 1px solid green;
-`;
-*/
-
-
 const Styledsummary = styled.div`
     grid-column: 1 / span 12;
     border: 1px solid salmon;
@@ -31,6 +23,11 @@ const Styledsummary = styled.div`
 const Styledcard = styled.div`
     grid-column: 1 /  span 12;
     border: 1px solid green;
+`;
+
+const Styledfooter = styled.footer`
+    grid-column: 1 / span 12;
+    border: 1px solid red;
 `;
 
 const summaryObj = {
@@ -54,7 +51,12 @@ const Homepage = () => {
             <Styledsummary>
                 <Summary summary={summaryObj} title={'Lorem Dipsum'} />
             </Styledsummary>
+            <Styledfooter>
+                <Link to="/resume">Resume</Link>
+                <Footer/>
+            </Styledfooter>
         </StyledMain>
+
     )
 }
 

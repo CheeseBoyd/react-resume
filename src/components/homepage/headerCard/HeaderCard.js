@@ -57,9 +57,9 @@ const StyledheaderText = styled.div`
     justify-self: center;
     align-self: center;
     h2 {font-size: 20px;}
-    h3 {font-size: 16px;}
+    h3 {font-size: 18px;}
     padding-left: 10px; padding-right: 10px;
-    @media (min-width: 576px) { h2 {font-size: 20px;} h3 {font-size: 16px;} justify-self: center; padding-left: 10px; padding-right: 10px; text-align:center; }
+    @media (min-width: 576px) { h2 {font-size: 20px;} h3 {font-size: 18px;} justify-self: center; padding-left: 10px; padding-right: 10px; text-align:center; }
     @media (min-width: 768px) { h2 {font-size: 25px;} h3 {font-size: 19px;} padding-left: 1rem; padding-right: 1rem; }
     @media (min-width: 992px) { h2 {font-size: 1.7rem;} h3 {font-size: 1.3rem;} justify-self: start; padding-left: 1rem; padding-right: 1rem; text-align:start;}
     @media (min-width: 1200px) { h2 {font-size: 1.7rem;} h3 {font-size: 1.3rem;} justify-self: start;  padding-left: 1rem; padding-right: 1rem; }

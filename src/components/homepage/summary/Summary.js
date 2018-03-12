@@ -47,6 +47,12 @@ const Styledlist = styled.ul`
 `;
 const StyledlistItem = styled.li`
     margin-bottom: 1rem;
+    margin-left: 1rem;
+    span {font-size: 16px;}
+    @media (min-width: 576px) { span {font-size: 16px;} }
+    @media (min-width: 768px) { }
+    @media (min-width: 992px) { span {font-size: 1rem;} }
+    @media (min-width: 1200px) { span {font-size: 1rem;} }
 `;
 
 
