@@ -1,8 +1,11 @@
+@import url('https://rsms.me/inter/inter-ui.css');
+
 body {
     margin: 0px;
     padding: 0px;
     border-radius: 0px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Inter UI', sans-serif;
+    font-size: 14px;
 }
 
 /*
@@ -31,4 +34,34 @@ body {
 
 .background-blackboard {
     background-color: #565656;
+}
+
+/* color triad theme */
+
+.background-red-warm {
+    background-color: #FF4948;
+}
+
+.background-red-cool {
+    background-color: #B22121;
+}
+
+.background-yellow-warm {
+    background-color: #FFFE95;
+}
+
+.background-red-light {
+    background-color: #FFC2BD;
+}
+
+.background-blue-warm {
+    background-color: #5090CC;
+}
+
+.background-blue-cool {
+    background-color: #216AB2;
+}
+
+.font-black {
+    color: #292928;
 }

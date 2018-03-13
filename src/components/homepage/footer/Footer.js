@@ -1,21 +1,27 @@
-import React, {Component} from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import LinkToResume from '../buttons/LinkToResume';
 // import PropTypes from 'prop-types';
 
 const StyledFooter = styled.footer`
+    color: white;
     min-width:100%;
     display: flex;
-    min-height: 288px;
-    border: 1px solid green;
+    min-height: 145px;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 `;
 
-const Footer = (props)=>{
+const Footer = ({email})=>{
     return(
-        <StyledFooter>
-            <span>{'Footer Text'}</span>
+        <div>
+        <LinkToResume path={'/resume'} />
+        <StyledFooter className="background-red-cool">
+            <span>{email}</span>
+            
         </StyledFooter>
+        </div>
     )
 }
 

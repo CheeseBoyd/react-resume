@@ -30,7 +30,8 @@ const StyledheaderImage = styled.img`
     justify-self: center;
     align-self: center;
     object-fit: cover;
-    border: 9px solid #f7ce3e;
+    border: 4px solid #f7ce3e;
+    box-shadow: 3px 3px 2px 1px;
     height: 250px; width: 250px; 
     @media (min-width: 576px) { height: 300px; width: 300px; justify-self: center; }
     @media (min-width: 768px) { }
@@ -56,26 +57,27 @@ const StyledheaderText = styled.div`
     color: #EEEEEE;
     justify-self: center;
     align-self: center;
-    h2 {font-size: 20px;}
-    h3 {font-size: 18px;}
+    h2 {font-size: 1.5rem;}
+    text-shadow: 1px 1px 2px black;
+    span {font-size: 0.9;}
     padding-left: 10px; padding-right: 10px;
-    @media (min-width: 576px) { h2 {font-size: 20px;} h3 {font-size: 18px;} justify-self: center; padding-left: 10px; padding-right: 10px; text-align:center; }
-    @media (min-width: 768px) { h2 {font-size: 25px;} h3 {font-size: 19px;} padding-left: 1rem; padding-right: 1rem; }
-    @media (min-width: 992px) { h2 {font-size: 1.7rem;} h3 {font-size: 1.3rem;} justify-self: start; padding-left: 1rem; padding-right: 1rem; text-align:start;}
-    @media (min-width: 1200px) { h2 {font-size: 1.7rem;} h3 {font-size: 1.3rem;} justify-self: start;  padding-left: 1rem; padding-right: 1rem; }
+    @media (min-width: 576px) { h2 {font-size: 1.5rem;} span {font-size: 0.9;} justify-self: center; padding-left: 10px; padding-right: 10px; text-align:center; }
+    @media (min-width: 768px) { h2 {font-size: 25px;} span {font-size: 19px;} padding-left: 1rem; padding-right: 1rem; }
+    @media (min-width: 992px) { h2 {font-size: 2rem;} span {font-size: 1rem;} justify-self: start; padding-left: 1rem; padding-right: 1rem; text-align:start;}
+    @media (min-width: 1200px) { h2 {font-size: 2rem;} span {font-size: 1rem;} justify-self: start;  padding-left: 1rem; padding-right: 1rem; }
 `;
 
 
 const HeaderCard = (props)=>{
     return (
-        <Styledheader className="background-demin">
+        <Styledheader className="background-red-warm">
             <StyledimgContainer> 
                 <StyledheaderImage src={props.imageLink} className="rounded-circle" alt="round-image"/> 
             </StyledimgContainer>
            <StyledtxtContainer>
                 <StyledheaderText>
                     <h2>{props.name}</h2>
-                    <h3>{props.objective}</h3>
+                    <span>{props.objective}</span>
                 </StyledheaderText>
             </StyledtxtContainer>
  

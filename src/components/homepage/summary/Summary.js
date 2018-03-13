@@ -1,20 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-/*
-    Shape: PropTypes.shape({
-    summary: PropTypes.object,
-    }),
- * Props.summary type of 
-*/
+
+const capitalizeFirstLetter = (str)=>{
+    let word = str.toLowerCase();
+    let upperCase = word.charAt(0);
+    let restOfword = word.slice(1);
+    return upperCase.toUpperCase() + restOfword;
+}
 
 const Styledmain = styled.div`
-    color: white;
+    color: black;
     display: grid;
     grid-template-columns: 1rem 1fr 1fr 1fr 1rem ;
     min-height: 300px;
     width: 100%;
-    border: 1px solid black;
     @media (min-width: 576px) { grid-template-columns: 1rem 1fr 1fr 1fr 1rem; }
     @media (min-width: 768px) { }
     @media (min-width: 992px) { grid-template-columns: 200px 1fr 1fr 1fr 200px; }
@@ -36,6 +36,7 @@ const StyledlistContainer = styled.div`
 
 const Styledlist = styled.ul`
     flex-basis: 50%;
+    box-shadow: 0px 2px grey;
     display: flex;
     flex-direction: column;
     padding-left: 2rem;
@@ -47,9 +48,9 @@ const Styledlist = styled.ul`
 `;
 const StyledlistItem = styled.li`
     margin-bottom: 1rem;
-    margin-left: 1rem;
-    span {font-size: 16px;}
-    @media (min-width: 576px) { span {font-size: 16px;} }
+    margin-left: 1.5rem;
+    span {font-size: 0.8rem;}
+    @media (min-width: 576px) { span {font-size: 0.8rem;} }
     @media (min-width: 768px) { }
     @media (min-width: 992px) { span {font-size: 1rem;} }
     @media (min-width: 1200px) { span {font-size: 1rem;} }
@@ -64,67 +65,51 @@ const Styledtitle = styled.div`
     justify-content: center;
 `;
 
-
-
-
-const Items = (props)=>{
-
+const Items = ({item})=>{
     return(
         <StyledlistItem>
-            <span>{props.item}</span>
+            <span>{item}</span>
         </StyledlistItem> 
-    )
-   
+    )   
 }
 
 const Lists = (props) =>{
-
 const mapper = (array)=>(
     array.map(items => (<Items item={items} key={array.indexOf(items)}/>))
 )
-
-const listItem = {
-    
+// <i class="material-icons">location_city</i>
+// <i class="material-icons">school</i>
+// <i class="material-icons">check</i>
+// <i class="material-icons">work</i>
+// <i class="material-icons">code</i>
+return(
+    <Styledlist>
+        <h5>{props.listName} {props.icon}</h5>
+        {mapper(props.item)}              
+    </Styledlist>
+    ) 
 }
 
-    return(
-            <Styledlist>
-                <h5>{props.listName}</h5>
-                {mapper(props.item)}              
-            </Styledlist>       
-    )
-}
-
-
-
-const Summary = (props) =>{
-
- const mapper = (array)=>(
+const Summary = ({summary, title}) =>{
+const mapper = (array)=>(
     array.map(element =>{
-        return(
-            <Lists listName={element[0]} item={element[1]} key={array.indexOf(element)} />
-        )
-        
+        switch (capitalizeFirstLetter(element[0])) {
+            case "Experience":
+                return(<Lists icon={<i className="material-icons">work</i>} listName={capitalizeFirstLetter(element[0])} item={element[1]} key={array.indexOf(element)} />);
+            case "Skill":
+                return(<Lists icon={<i className="material-icons">code</i>} listName={capitalizeFirstLetter(element[0])} item={element[1]} key={array.indexOf(element)} />);
+            case "Education":
+                return(<Lists icon={<i className="material-icons">school</i>} listName={capitalizeFirstLetter(element[0])} item={element[1]} key={array.indexOf(element)} />);    
+            default:
+            return(<Lists listName={capitalizeFirstLetter(element[0])} item={element[1]} key={array.indexOf(element)} />);
+        }    
     })
 )
-
-
-// Test props ----------------- >
-// const obj = {
-//     "Lorem Ipsum": ["Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum explicabo harum quam ipsa alias molestiae cumque tenetur placeat obcaecati veniam impedit ab, sit, enim sed suscipit! Ratione quod rem enim, repudiandae sit sed quae mollitia iure quidem eum aspernatur, dignissimos minus sunt? Ut reiciendis nostrum atque rerum temporibus perspiciatis est voluptatum architecto?","Sed at condimentum nisl. Aenean lob","i, quis tempor ante pellentesque ac. Cras vitae tempus nisl, non iaculis turpis. Cras non rutrum elit, sed malesuada lacus. Aenean ullamcorper, ante et feugiat molestie, massa arcu tincidunt lectus, et fermentum orci elit quis libero. Mauris risus neque, dignissim sit amet nibh ac, pellentesque interdum metus. Vestibulum non dui urna.","ras id tortor tempus, dignissim dui et, fringilla leo. Nunc at lorem tempus, ullamcorper nibh et, suscipit sem. Quisque nec leo enim. "],
-//     "Donec eget": ["amet consectetur adipisicing elit. Ipsum explicabo harum quams neque, sed eleifend ", "Quisque tincidunt luctus mollis. Donec pellentesque vel neque molestie cursus. Mauris lobortis turpis quam, sed finibus"],
-//     "Donec of lectus ": ["The Vestibulum vulputate, ante eu suscipit scelerisque, nunc urna tincidunt leo, ut vehicula turpis urna auctor neque. Morbi iaculis lorem ut libero cursus facilisis.", "Tonec pellentesque vel neque molestie cursus"],
-//     "consectetur of colors": ["pretium nisi id, mollis eros. Cras id tortor tempus, dignissim dui et, fringilla leo. Nunc at lorem tempus, ullamcorper nibh et, suscipit sem. Quisque nec leo enim. Duis ultrices, justo a congue ultrices, massa justo suscipit purus, sit amet ultrices ipsum turpis sit amet augue. ", "amet", "ultrices", "suscipit"],
-//     "ante of scelerisque colors": ["dolor sit, amet consectetur adipisicing elit", "Vestibulum vulputate, ante eu suscipit scelerisque, nunc urna tincidunt leo, ut vehicula turpis urna auctor neque. Morbi iaculis lorem ut libero cursus facilisis. Donec lectus augue, elementum dictum leo vitae, blandit pretium ante. Donec sollicitudin, metus vel maximus commodo, erat nibh venenatis augue, id sodales augue erat vel metus. Donec non viverra lorem, vel tempor dolor. In malesuada, orci sed elementum faucibus, dolor erat eleifend tellus, non consequat massa nulla quis nibh. Aliquam eu risus facilisis, accumsan risus a, vulputate eros. Integer faucibus odio nec euismod aliquam. Morbi aliquet nec mauris eu feugiat. Nullam lorem ante, consectetur in est quis, blandit dapibus magna. In nec tincidunt ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus et vestibulum diam. Phasellus congue ex quis enim vulputate egestas."],
-// }
-// Test props < -----------------
-const entries = Object.entries(props.summary);
-
-
+const entries = Object.entries(summary);
     return(
-        <Styledmain className="background-blackboard">
+        <Styledmain className="font-black">
             <Styledtitle>
-                <h3>{props.title}</h3>
+                <h3>{title}</h3>
             </Styledtitle>
             <StyledlistContainer>
                 {
@@ -135,16 +120,17 @@ const entries = Object.entries(props.summary);
         </Styledmain>
     )
 }
-/*
+
 
 Summary.propTypes = {
-
-    imageLink: PropTypes.string,
-    name: PropTypes.string,
-    objective: PropTypes.string
+    title: PropTypes.string.isRequired,
+    summary: PropTypes.shape({
+        education: PropTypes.array,
+        experience: PropTypes.array,
+        skills: PropTypes.array,
+    }).isRequired
 
 };
 
-*/
 
 export default Summary
