@@ -39,21 +39,21 @@ const Styledlist = styled.ul`
     box-shadow: 0px 2px grey;
     display: flex;
     flex-direction: column;
-    padding-left: 2rem;
+    padding-left: 1rem;
     margin-bottom: 2rem;
-    @media (min-width: 576px) { flex-direction: column; }
-    @media (min-width: 768px) { }
-    @media (min-width: 992px) { flex-direction: column; }
-    @media (min-width: 1200px) { flex-direction: column; }
+    @media (min-width: 576px) { span {font-size: 0.8rem;} padding-left: 1rem; }
+    @media (min-width: 768px) { span {font-size: 1rem;} padding-left: 2rem; }
+    @media (min-width: 992px) { span {font-size: 1rem;} padding-left: 2rem; }
+    @media (min-width: 1200px) { span {font-size: 1rem;} padding-left: 2rem; }
 `;
 const StyledlistItem = styled.li`
     margin-bottom: 1rem;
     margin-left: 1.5rem;
     span {font-size: 0.8rem;}
-    @media (min-width: 576px) { span {font-size: 0.8rem;} }
-    @media (min-width: 768px) { }
-    @media (min-width: 992px) { span {font-size: 1rem;} }
-    @media (min-width: 1200px) { span {font-size: 1rem;} }
+    @media (min-width: 576px) { span {font-size: 0.8rem;} margin-left: 1.5rem;}
+    @media (min-width: 768px) { span {font-size: 1rem;} margin-left: 1.5rem;}
+    @media (min-width: 992px) { span {font-size: 1rem;} margin-left: 1.5rem;}
+    @media (min-width: 1200px) { span {font-size: 1rem;} margin-left: 1.5rem;}
 `;
 
 
