@@ -19,7 +19,6 @@ const Footer = ({email})=>{
         <LinkToResume path={'/resume'} />
         <StyledFooter className="background-red-cool">
             <span>{email}</span>
-            
         </StyledFooter>
         </div>
     )

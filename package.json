@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "gh-pages": "^1.1.0",
     "material-ui": "^1.0.0-beta.33",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
@@ -13,12 +12,9 @@
     "styled-components": "^3.1.6"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",    
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-   "homepage": "https://lanotsky.github.io/react-resume/"
+  }
 }
