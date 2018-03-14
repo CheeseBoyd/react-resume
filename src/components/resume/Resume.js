@@ -8,7 +8,7 @@ import Content from './content/Content';
 const StyledMain = styled.div`
     display: grid;
     grid-template-columns: 0px 1fr;
-    min-height: 720px;
+    min-height: 595px;
     z-index: 2;
     @media (min-width: 576px) {grid-template-columns: 0px 1fr;}
     @media (min-width: 768px) {grid-template-columns: 320px 1fr; }
@@ -53,18 +53,28 @@ const data = {
     "skills": [skill1, skill2],
 }
 
+// end of sample data
+
+const dontShowYet = {
+    "display": "none",
+}
+
+const underContruction = {
+    "gridColumn": "1 / span 2",
+}
+
 const Resume = ({resume}) =>{
 // const entries = Object.entries(resume); // return the resume key val array
     return(
         <div>
             <AppBar title={'AppBar'} />
             <StyledMain>
-                <StyledTableOfContent>
+                <StyledTableOfContent style={dontShowYet}>
                     { /* /resume/:category */ }
                     <Fields />
                 </StyledTableOfContent>
                     
-                <StyledContent>
+                <StyledContent style={underContruction}>
                 { /* /resume/skills */ }
                 <Content />
                 </StyledContent>

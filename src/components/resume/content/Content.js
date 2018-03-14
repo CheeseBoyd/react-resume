@@ -1,10 +1,22 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledContainer = styled.div`
+    background-image: url("https://ps.w.org/under-construction-page/assets/screenshot-18.png?rev=1635810");
+    background-size: cover;
+    height: 100%;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+`;
 
 const Content = (props)=>{
     return(
-        <div>
-            Contents: Lorem ipsum dolor sit amet consectetur adipisicing elit. Non maiores officiis pariatur mollitia iure, eos accusantium. Aliquid ipsa voluptate cumque sequi aut velit tenetur! Impedit distinctio labore exercitationem sapiente optio debitis officiis facere dicta dolores officia minima ipsa totam similique nihil ipsum velit sed nam, voluptatibus, suscipit est? Quis facilis quae hic impedit delectus veritatis.
-        </div>
+        <StyledContainer>
+           <span>site under construction</span>
+        </StyledContainer>
     )
 }
 

@@ -27,7 +27,7 @@ const AppBar = (props)=>{
     return(
     <StyledAppbar className="background-red-warm" >
         <span style={spanStyle}>{props.title}</span>
-        <Link style={linkStyle} to={"/"}><i class="material-icons">keyboard_backspace</i></Link>
+        <Link style={linkStyle} to={"/"}><i className="material-icons">keyboard_backspace</i></Link>
     </StyledAppbar>
     )
 }
