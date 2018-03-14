@@ -1,15 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
+
 
 class Fields extends React.Component {
-    Constructor(){
-        super();
-        this.state = {
-            isMinified: this.props.isMinified,
-        }
+    constructor(props){
+        super(props);
     }
 
     render(){
-        // stuff
+        return(
+            <div>
+                Table of Contents:
+            </div>
+        )
     }
 }
 

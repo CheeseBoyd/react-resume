@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import AppBar from './navigation/AppBar';
+import Fields from './fields/Fields';
+import Content from './content/Content';
 
 const StyledMain = styled.div`
     display: grid;
@@ -34,47 +37,36 @@ const StyledContent = styled.div`
     @media (min-width: 1200px) {grid-column: 2 / span 1;}
 `;
 
-const StyledAppbar = styled.header`
-    height: 50px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-`;
+// sample data
+const school1 = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit eum doloremque temporibus ducimus adipisci odio libero quae quaerat commodi eveniet aut tenetur, a incidunt reprehenderit!"
+const school2 = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, cupiditate?"
 
-const AppBar = (props)=>{
+const work1 = "Lorem ipsum dolor, sit amet consectetur adipisicing elit."
+const work2 = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam dolore quae expedita provident, impedit optio aliquid consectetur nobis dignissimos sit?"
 
-    const spanStyle={
-        "paddingLeft": "1.5rem",
-    }
+const skill1 = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, vitae!"
+const skill2 = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, iure."
 
-    const elementStyle={
-        "marginLeft": "auto",
-        "paddingRight": "1.5rem",
-    }
-
-    return(
-    <StyledAppbar>
-        <span style={spanStyle}>{props.title}</span>
-        <Link style={elementStyle} to={"/"}>Home</Link>
-    </StyledAppbar>
-    )
+const data = {
+    "education": [school1, school2],
+    "experience": [work1, work2],
+    "skills": [skill1, skill2],
 }
 
-
-
-const Resume = ({resume, element}) =>{
+const Resume = ({resume}) =>{
 // const entries = Object.entries(resume); // return the resume key val array
-
     return(
         <div>
             <AppBar title={'AppBar'} />
             <StyledMain>
                 <StyledTableOfContent>
-                    Table of Content
+                    { /* /resume/:category */ }
+                    <Fields />
                 </StyledTableOfContent>
                     
                 <StyledContent>
-                Content: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio accusantium molestias, commodi placeat, ullam nostrum vitae, maxime quia veritatis deleniti earum libero odit quaerat cum!
+                { /* /resume/skills */ }
+                <Content />
                 </StyledContent>
             </StyledMain>
         </div>
