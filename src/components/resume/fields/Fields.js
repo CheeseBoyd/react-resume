@@ -1,30 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledContainer = styled.div`
-    background-image: url("https://ps.w.org/under-construction-page/assets/screenshot-18.png?rev=1635810");
-    background-attachment: scroll;
-    background-size: cover;
-    height: 100%;
-    color: white;
-
-
-
-
-
-    display: flex;
-    justify-content: center;
-    align-ites: flex-start;
-`;
+// background-image: url("https://ps.w.org/under-construction-page/assets/screenshot-18.png?rev=1635810");
+// background-attachment: scroll;
+// background-size: cover;
+// height: 100%;
+// color: white;
 
 const StyledList = styled.ul`
     display: flex;
-    justify-content: center;
-    align-ites: flex-start;
+    flex-direction: column;
+    padding-left: 0px;
+    margin-top: 1rem;
+    border: 1px solid red;
+    align-items: flex-start;
 `;
 
 const StyledListItem = styled.li`
     list-style: none;
+    border: 1px solid black;
+    margin-bottom: 0.8rem;
+    padding-left: 2rem;
 `;
 
 class Fields extends React.Component {
@@ -34,13 +30,19 @@ class Fields extends React.Component {
 
     render(){
         return(
-            <StyledContainer>
             <StyledList>
                 <StyledListItem>
-                    I'll be working on this soon
+                    <span>Link for Experience</span>
                 </StyledListItem>
+
+                <StyledListItem>
+                    <span>Link for Education</span>
+                </StyledListItem>
+
+                <StyledListItem>
+                    <span>Link for Skills</span>
+                </StyledListItem>                
             </StyledList>
-            </StyledContainer>
         )
     }
 }

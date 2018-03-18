@@ -3,13 +3,14 @@ import HeaderCard from './headerCard/HeaderCard';
 import Summary from './summary/Summary';
 import Footer from './footer/Footer';
 import styled from 'styled-components';
+import LinkToResume from './buttons/LinkToResume';
 
 
 const StyledMain = styled.div`
     display: grid;
     grid-template-column: repeat(12, 1fr);
-    grid-template-row: 1fr 1fr 300px;
-    min-height: 800px;
+    grid-template-row: 1fr 1fr 200px;
+    height: 100vh;
 `;
 
 const Styledsummary = styled.div`
@@ -21,13 +22,14 @@ const Styledcard = styled.div`
 `;
 
 const Styledfooter = styled.footer`
+    align-content: end;
     grid-column: 1 / span 12;
 `;
 
 // Test data
 const summaryObj = {
     "experience": ["2015-2016 Worked as a Customer Service Representative", "2016-2017 Worked as a Front End Developer for Manilla Bulletin"],
-    "skill": ["Front-end web development with Javascript, HTML,CSS and Front-end frameworks (i.e React)", "Backend web development with node.js and Express.js", "Multi role developer and autodidact (self-teaching)"],
+    "skills": ["Front-end web development with Javascript, HTML,CSS and Front-end frameworks (i.e React)", "Backend web development with node.js and Express.js", "Multi role developer and autodidact (self-teaching)"],
     "education": ["2001-2007 Graduate of Elementary LJCS Elementary", "2007-2011 Graduate of High School at Siena College of Taytay", "2011-2015 Graduate of Bachelor of Science major in Operations Management at Far Eastern Universiy"],
 
 }
@@ -42,6 +44,7 @@ const Homepage = () => {
                 objective={'A young web developer. Honing his skills for full-stack web development. Self-motivated and self-reliant'} 
                  />
             </Styledcard>
+
             <Styledsummary>
                 <Summary summary={summaryObj} title={'Breif Overview'} />
             </Styledsummary>

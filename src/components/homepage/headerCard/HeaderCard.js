@@ -6,7 +6,7 @@ const Styledheader = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 35px;
-    height: 100%;
+    min-height: 100%;
     @media (min-width: 576px) { grid-column-gap: 38px; }
     @media (min-width: 768px) { grid-column-gap: 45px; }
     @media (min-width: 992px) { grid-column-gap: 50px; }

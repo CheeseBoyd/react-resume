@@ -8,7 +8,7 @@ import Content from './content/Content';
 const StyledMain = styled.div`
     display: grid;
     grid-template-columns: 0px 1fr;
-    min-height: 595px;
+    height: 100vh;
     z-index: 2;
     @media (min-width: 576px) {grid-template-columns: 0px 1fr;}
     @media (min-width: 768px) {grid-template-columns: 320px 1fr; }
@@ -21,6 +21,8 @@ const StyledTableOfContent = styled.div `
     height: 100%;
     border: 1px solid black;
     display: none;
+    max-height: 800px;
+    overflow: auto;
     @media (min-width: 576px) { display: none; }
     @media (min-width: 768px) {display: block; }
     @media (min-width: 992px) {display: block;} 
@@ -66,15 +68,15 @@ const underContruction = {
 const Resume = ({resume}) =>{
 // const entries = Object.entries(resume); // return the resume key val array
     return(
-        <div>
-            <AppBar title={'AppBar'} />
+        <div id="resume">
+            <AppBar title={'Resume'} />
             <StyledMain>
-                <StyledTableOfContent style={dontShowYet}>
+                <StyledTableOfContent >
                     { /* /resume/:category */ }
                     <Fields />
                 </StyledTableOfContent>
                     
-                <StyledContent style={underContruction}>
+                <StyledContent >
                 { /* /resume/skills */ }
                 <Content />
                 </StyledContent>

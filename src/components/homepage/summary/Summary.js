@@ -41,6 +41,7 @@ const Styledlist = styled.ul`
     flex-direction: column;
     padding-left: 1rem;
     margin-bottom: 2rem;
+    max-width: 600px;
     @media (min-width: 576px) { span {font-size: 0.8rem;} padding-left: 1rem; }
     @media (min-width: 768px) { span {font-size: 1rem;} padding-left: 2rem; }
     @media (min-width: 992px) { span {font-size: 1rem;} padding-left: 2rem; }
@@ -96,7 +97,7 @@ const mapper = (array)=>(
         switch (capitalizeFirstLetter(element[0])) {
             case "Experience":
                 return(<Lists icon={<i className="material-icons">work</i>} listName={capitalizeFirstLetter(element[0])} item={element[1]} key={array.indexOf(element)} />);
-            case "Skill":
+            case "Skills":
                 return(<Lists icon={<i className="material-icons">code</i>} listName={capitalizeFirstLetter(element[0])} item={element[1]} key={array.indexOf(element)} />);
             case "Education":
                 return(<Lists icon={<i className="material-icons">school</i>} listName={capitalizeFirstLetter(element[0])} item={element[1]} key={array.indexOf(element)} />);    

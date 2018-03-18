@@ -7,7 +7,7 @@ const StyledFooter = styled.footer`
     color: white;
     min-width:100%;
     display: flex;
-    min-height: 145px;
+    height: 90px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -16,7 +16,7 @@ const StyledFooter = styled.footer`
 const Footer = ({email})=>{
     return(
         <div>
-        <LinkToResume path={'/resume'} />
+        <LinkToResume path={'/resume#resume'} />
         <StyledFooter className="background-red-cool">
             <span>{email}</span>
         </StyledFooter>
